@@ -1,0 +1,29 @@
+{
+  "name": "moon-ssh-sni",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Moon SSH — SNI-only (no payload) tunnel server + Telegram bot admin",
+  "type": "commonjs",
+  "scripts": {
+    "build": "esbuild server.ts --bundle --platform=node --target=node22 --format=cjs --outfile=dist/server.cjs --external:ssh2 --external:cpu-features --external:nan",
+    "dev": "tsx server.ts",
+    "start": "node dist/server.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ssh2": "^1.17.0",
+    "undici": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.5",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
